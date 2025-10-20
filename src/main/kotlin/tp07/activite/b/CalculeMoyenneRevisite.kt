@@ -12,11 +12,11 @@ package tp07.activite.b
  */
 fun calculerMoyenne(notes: Array<Double>): Double {
     // Expliquez en français les pré-conditions exprimées dans le code de la fonction calculerMoyenne.
-    // ...
-    // ...
+    // Le tableau de notes ne doit pas être vide.
+    // Chaque not du tableau est comprise entre 0.0 et 20.0
     // Quel type d'exception sera lancée par la fonction si l'une des pré-conditions n'est
     // pas satisfaite ?
-    // ...
+    // Une exception de type IllegalArgumentException sera lancée si une des pré-conditions n'est pas staisfaite.
 
 
     require(notes.isNotEmpty()) {
@@ -37,10 +37,10 @@ fun calculerMoyenne(notes: Array<Double>): Double {
     val moyenne = somme / notes.size
 
     // Expliquez en français la post-condition exprimée dans le code de la fonction calculerMoyenne.
-    // ...
+    // La moyenne doit être comprise entre 0 et 20
     // Quel type d'exception sera lancée par la fonction si la pré-condition n'est
     // pas satisfaite ?
-    // ...
+    // Une exception de type IllegalStateException sera lancée si une des post-conditions n'est pas staisfaite.
 
     check(moyenne in 0.0..20.0) {
         "Erreur de calcul : la moyenne devrait être entre 0 et 20"
@@ -52,9 +52,10 @@ fun calculerMoyenne(notes: Array<Double>): Double {
 fun main() {
     println("=== Calcul de moyenne d'examen ===\n")
     // Quel sont les avantages principaux à utiliser les blocs try et catch dans le programme principal ?
-    // ...
-    // ...
-    // ...
+    // Permet de gérer toutes les erreurs de manière
+    // - uniforme
+    // - centralisée
+    // - à personnaliser le flux du programme pour qu'il reste "use friendly"
     try {
         // Demander le nombre de notes
         print("Combien de notes voulez-vous saisir ? ")
