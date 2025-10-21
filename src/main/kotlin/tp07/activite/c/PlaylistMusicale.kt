@@ -22,39 +22,27 @@ fun main() {
         for (i in 0 until nombreChansons) {
             println("\n--- Chanson ${i + 1} ---")
             print("Titre : ")
-            titres[i] = readln()
-            check(titres[i].isNotEmpty()) { "❌ Le titre ne doit pas être vide !" }
+            val titre = readln()
             print("Durée (en secondes) : ")
-            durees[i] = readln().toInt()
-            check(durees[i] > 0) {"❌ La durée doit être positive !"}
-            check(durees[i] <= 600) {"❌ La durée ne peut pas dépasser 10 minutes (600 secondes) !"}
+            val duree = readln().toInt()
+            ajouterChanson(titres, durees,i, titre, duree)
         }
 
         // Calculer la durée totale
-        var dureeTotal = 0
-        for (duree in durees) {
-            dureeTotal += duree
-        }
+        var dureeTotal = calculerDureeTotale(durees)
 
         // Convertir en minutes et secondes
         val minutes = dureeTotal / 60
         val secondes = dureeTotal % 60
 
         // Trouver la chanson la plus longue
-        var indexPlusLongue = 0
-        var dureePlusLongue = durees[0]
-        for (i in 1 until nombreChansons) {
-            if (durees[i] > dureePlusLongue) {
-                dureePlusLongue = durees[i]
-                indexPlusLongue = i
-            }
-        }
+        var indexPlusLongue = trouverIndexChansonPlusLongue(durees)
 
         // Afficher les résultats
         println("\n=== Résumé de votre playlist ===")
         println("Nombre de chansons : $nombreChansons")
         println("Durée totale : ${minutes}min ${secondes}s")
-        println("Chanson la plus longue : ${titres[indexPlusLongue]} (${dureePlusLongue}s)")
+        println("Chanson la plus longue : ${titres[indexPlusLongue]} (${durees[indexPlusLongue]}s)")
 
         println("\n=== Liste des chansons ===")
         for (i in 0 until nombreChansons) {
@@ -66,6 +54,8 @@ fun main() {
     } catch (e: NumberFormatException) {
         println("\n❌ Erreur : Vous devez saisir un nombre valide !")
     } catch (e: IllegalStateException) {
+        println(e.message)
+    } catch (e: IllegalArgumentException) {
         println(e.message)
     }
 }
