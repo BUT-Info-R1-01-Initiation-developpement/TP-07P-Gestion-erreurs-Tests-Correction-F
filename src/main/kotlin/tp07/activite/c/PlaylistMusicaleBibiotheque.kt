@@ -7,3 +7,16 @@ fun calculerDureeTotale(durees: Array<Int>): Int {
     }
     return dureeTotale
 }
+
+fun trouverIndexChansonPlusLongue(durees: Array<Int>): Int {
+    require(durees.isNotEmpty()) {"Le tableau des durées ne peut pas être vide pour trouver la/une durée la plus longue."}
+    var indexPlusLongue = 0
+    //var dureePlusLongue = durees[0]
+    for (i in 1 until durees.size) {
+        if (durees[i] > durees[indexPlusLongue]) {
+            //dureePlusLongue = durees[i]
+            indexPlusLongue = i
+        }
+    }
+    return indexPlusLongue
+}
