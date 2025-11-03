@@ -30,3 +30,13 @@ fun calculerProgression(scoreAvant: Int, scoreApres: Int): Double {
     require(scoreApres >= 0) { "Le score apres ne peut pas être négatif" }
     return (scoreApres.toDouble() - scoreAvant)/scoreAvant * 100
 }
+
+fun obtenirNiveauJoueur(moyenneScore: Double): String {
+    require(moyenneScore >= 0) { "Le score moyen ne peut pas être négatif." }
+    return when {
+        moyenneScore in 0.0..1000.0 -> "Débutant"
+        moyenneScore <= 2000.0 -> "Intermédiaire"
+        moyenneScore <= 3000.0 -> "Avancé"
+        else -> "Expert"
+    }
+}

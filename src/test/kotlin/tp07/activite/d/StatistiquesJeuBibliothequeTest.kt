@@ -193,7 +193,7 @@ class StatistiquesJeuBibliothequeTest {
                 }
 
                 // ========== Tests pour obtenirNiveauJoueur ==========
-    /*
+
                 @Test
                 fun `obtenirNiveauJoueur niveau Débutant`() {
                     // Given
@@ -206,88 +206,88 @@ class StatistiquesJeuBibliothequeTest {
                     assertEquals("Débutant", resultat)
                 }
 
-                @Test
-                fun `obtenirNiveauJoueur niveau Intermédiaire`() {
-                    // Given
-                    val moyenneScore = 1500.0
 
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
+            @Test
+            fun `obtenirNiveauJoueur niveau Intermédiaire`() {
+                // Given
+                val moyenneScore = 1500.0
 
-                    // Then
-                    assertEquals("Intermédiaire", resultat)
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Intermédiaire", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur niveau Avancé`() {
+                // Given
+                val moyenneScore = 2800.0
+
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Avancé", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur niveau Expert`() {
+                // Given
+                val moyenneScore = 4500.0
+
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Expert", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur à la limite Débutant-Intermédiaire`() {
+                // Given
+                val moyenneScore = 1000.0
+
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Débutant", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur à la limite Intermédiaire-Avancé`() {
+                // Given
+                val moyenneScore = 2000.0
+
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Intermédiaire", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur à la limite Avancé-Expert`() {
+                // Given
+                val moyenneScore = 3000.0
+
+                // When
+                val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                // Then
+                assertEquals("Avancé", resultat)
+            }
+
+            @Test
+            fun `obtenirNiveauJoueur avec score négatif lance exception`() {
+                // Given
+                val moyenneScore = -500.0
+
+                // When & Then
+                assertThrows<IllegalArgumentException> {
+                    obtenirNiveauJoueur(moyenneScore)
                 }
+            }
 
-                @Test
-                fun `obtenirNiveauJoueur niveau Avancé`() {
-                    // Given
-                    val moyenneScore = 2800.0
-
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                    // Then
-                    assertEquals("Avancé", resultat)
-                }
-
-                @Test
-                fun `obtenirNiveauJoueur niveau Expert`() {
-                    // Given
-                    val moyenneScore = 4500.0
-
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                    // Then
-                    assertEquals("Expert", resultat)
-                }
-
-                @Test
-                fun `obtenirNiveauJoueur à la limite Débutant-Intermédiaire`() {
-                    // Given
-                    val moyenneScore = 1000.0
-
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                    // Then
-                    assertEquals("Débutant", resultat)
-                }
-
-                @Test
-                fun `obtenirNiveauJoueur à la limite Intermédiaire-Avancé`() {
-                    // Given
-                    val moyenneScore = 2000.0
-
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                    // Then
-                    assertEquals("Intermédiaire", resultat)
-                }
-
-                @Test
-                fun `obtenirNiveauJoueur à la limite Avancé-Expert`() {
-                    // Given
-                    val moyenneScore = 3000.0
-
-                    // When
-                    val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                    // Then
-                    assertEquals("Avancé", resultat)
-                }
-
-                @Test
-                fun `obtenirNiveauJoueur avec score négatif lance exception`() {
-                    // Given
-                    val moyenneScore = -500.0
-
-                    // When & Then
-                    assertThrows<IllegalArgumentException> {
-                        obtenirNiveauJoueur(moyenneScore)
-                    }
-                }
-
-             */
 }
