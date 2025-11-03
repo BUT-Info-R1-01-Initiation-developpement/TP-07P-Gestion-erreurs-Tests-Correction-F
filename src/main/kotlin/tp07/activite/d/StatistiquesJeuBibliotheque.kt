@@ -24,3 +24,9 @@ fun trouverMeilleurScore(scores: Array<Int>): Int {
     }
     return scoreMax
 }
+
+fun calculerProgression(scoreAvant: Int, scoreApres: Int): Double {
+    require(scoreAvant > 0) { "Le score avant ne peut pas être négatif ou 0" }
+    require(scoreApres >= 0) { "Le score apres ne peut pas être négatif" }
+    return (scoreApres.toDouble() - scoreAvant)/scoreAvant * 100
+}

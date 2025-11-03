@@ -127,7 +127,7 @@ class StatistiquesJeuBibliothequeTest {
                     trouverMeilleurScore(scores)
                 }
             }
-/*            // ========== Tests pour calculerProgression ==========
+           // ========== Tests pour calculerProgression ==========
 
             @Test
             fun `calculerProgression avec augmentation de score`() {
@@ -143,151 +143,151 @@ class StatistiquesJeuBibliothequeTest {
             }
 
             @Test
-            fun `calculerProgression avec diminution de score`() {
-                // Given
-                val scoreAvant = 2000
-                val scoreApres = 1500
+                fun `calculerProgression avec diminution de score`() {
+                    // Given
+                    val scoreAvant = 2000
+                    val scoreApres = 1500
 
-                // When
-                val resultat = calculerProgression(scoreAvant, scoreApres)
+                    // When
+                    val resultat = calculerProgression(scoreAvant, scoreApres)
 
-                // Then
-                assertEquals(-25.0, resultat, 0.01)
-            }
-
-            @Test
-            fun `calculerProgression avec scores identiques`() {
-                // Given
-                val scoreAvant = 2000
-                val scoreApres = 2000
-
-                // When
-                val resultat = calculerProgression(scoreAvant, scoreApres)
-
-                // Then
-                assertEquals(0.0, resultat, 0.01)
-            }
-
-            @Test
-            fun `calculerProgression avec score avant à zéro lance exception`() {
-                // Given
-                val scoreAvant = 0
-                val scoreApres = 1500
-
-                // When & Then
-                assertThrows<IllegalArgumentException> {
-                    calculerProgression(scoreAvant, scoreApres)
+                    // Then
+                    assertEquals(-25.0, resultat, 0.01)
                 }
-            }
 
-            @Test
-            fun `calculerProgression avec scores négatifs lance exception`() {
-                // Given
-                val scoreAvant = -1000
-                val scoreApres = 1500
+                @Test
+                fun `calculerProgression avec scores identiques`() {
+                    // Given
+                    val scoreAvant = 2000
+                    val scoreApres = 2000
 
-                // When & Then
-                assertThrows<IllegalArgumentException> {
-                    calculerProgression(scoreAvant, scoreApres)
+                    // When
+                    val resultat = calculerProgression(scoreAvant, scoreApres)
+
+                    // Then
+                    assertEquals(0.0, resultat, 0.01)
                 }
-            }
 
-            // ========== Tests pour obtenirNiveauJoueur ==========
+                @Test
+                fun `calculerProgression avec score avant à zéro lance exception`() {
+                    // Given
+                    val scoreAvant = 0
+                    val scoreApres = 1500
 
-            @Test
-            fun `obtenirNiveauJoueur niveau Débutant`() {
-                // Given
-                val moyenneScore = 800.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Débutant", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur niveau Intermédiaire`() {
-                // Given
-                val moyenneScore = 1500.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Intermédiaire", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur niveau Avancé`() {
-                // Given
-                val moyenneScore = 2800.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Avancé", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur niveau Expert`() {
-                // Given
-                val moyenneScore = 4500.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Expert", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur à la limite Débutant-Intermédiaire`() {
-                // Given
-                val moyenneScore = 1000.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Débutant", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur à la limite Intermédiaire-Avancé`() {
-                // Given
-                val moyenneScore = 2000.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Intermédiaire", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur à la limite Avancé-Expert`() {
-                // Given
-                val moyenneScore = 3000.0
-
-                // When
-                val resultat = obtenirNiveauJoueur(moyenneScore)
-
-                // Then
-                assertEquals("Avancé", resultat)
-            }
-
-            @Test
-            fun `obtenirNiveauJoueur avec score négatif lance exception`() {
-                // Given
-                val moyenneScore = -500.0
-
-                // When & Then
-                assertThrows<IllegalArgumentException> {
-                    obtenirNiveauJoueur(moyenneScore)
+                    // When & Then
+                    assertThrows<IllegalArgumentException> {
+                        calculerProgression(scoreAvant, scoreApres)
+                    }
                 }
-            }
 
-         */
+                @Test
+                fun `calculerProgression avec scores négatifs lance exception`() {
+                    // Given
+                    val scoreAvant = -1000
+                    val scoreApres = 1500
+
+                    // When & Then
+                    assertThrows<IllegalArgumentException> {
+                        calculerProgression(scoreAvant, scoreApres)
+                    }
+                }
+
+                // ========== Tests pour obtenirNiveauJoueur ==========
+    /*
+                @Test
+                fun `obtenirNiveauJoueur niveau Débutant`() {
+                    // Given
+                    val moyenneScore = 800.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Débutant", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur niveau Intermédiaire`() {
+                    // Given
+                    val moyenneScore = 1500.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Intermédiaire", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur niveau Avancé`() {
+                    // Given
+                    val moyenneScore = 2800.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Avancé", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur niveau Expert`() {
+                    // Given
+                    val moyenneScore = 4500.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Expert", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur à la limite Débutant-Intermédiaire`() {
+                    // Given
+                    val moyenneScore = 1000.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Débutant", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur à la limite Intermédiaire-Avancé`() {
+                    // Given
+                    val moyenneScore = 2000.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Intermédiaire", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur à la limite Avancé-Expert`() {
+                    // Given
+                    val moyenneScore = 3000.0
+
+                    // When
+                    val resultat = obtenirNiveauJoueur(moyenneScore)
+
+                    // Then
+                    assertEquals("Avancé", resultat)
+                }
+
+                @Test
+                fun `obtenirNiveauJoueur avec score négatif lance exception`() {
+                    // Given
+                    val moyenneScore = -500.0
+
+                    // When & Then
+                    assertThrows<IllegalArgumentException> {
+                        obtenirNiveauJoueur(moyenneScore)
+                    }
+                }
+
+             */
 }
