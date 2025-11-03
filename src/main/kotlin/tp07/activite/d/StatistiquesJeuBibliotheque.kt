@@ -11,3 +11,16 @@ fun calculerMoyenneScore(scores: Array<Int>): Double {
     val moyenne = somme.toDouble() / scores.size
     return moyenne
 }
+
+fun trouverMeilleurScore(scores: Array<Int>): Int {
+    require(!scores.isEmpty()) {
+        "Le tableau de scores ne peut pas être vide pour calculer une moyenne."
+    }
+    var scoreMax = scores[0]
+    for(i in 1 until scores.size) {
+        if (scores[i] > scoreMax) {
+            scoreMax = scores[i]
+        }
+    }
+    return scoreMax
+}

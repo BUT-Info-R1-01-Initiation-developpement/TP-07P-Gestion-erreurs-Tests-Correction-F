@@ -56,7 +56,7 @@ class StatistiquesJeuBibliothequeTest {
         }
 
         // ========== Tests pour trouverMeilleurScore ==========
-    /*
+
             @Test
             fun `trouverMeilleurScore avec score max au milieu`() {
                 // Given
@@ -127,8 +127,7 @@ class StatistiquesJeuBibliothequeTest {
                     trouverMeilleurScore(scores)
                 }
             }
-
-            // ========== Tests pour calculerProgression ==========
+/*            // ========== Tests pour calculerProgression ==========
 
             @Test
             fun `calculerProgression avec augmentation de score`() {
